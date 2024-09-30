@@ -1,8 +1,8 @@
 include .env
 
-PY_VENV=venv
-PYTHON = $(PY_VENV)/bin/python
-PIP = $(PY_VENV)/bin/pip
+PY_VENV = venv
+PYTHON  = $(PY_VENV)/bin/python
+PIP     = $(PY_VENV)/bin/pip
 PROJECT_DIR = $(shell pwd)
 
 init:
@@ -10,4 +10,4 @@ init:
 	$(PIP) install -r requirements.txt
 
 run:
-	source $(PROJECT_DIR)/.env && $(PY_VENV)/bin/uvicorn app:app --host 0.0.0.0 --port ${PORT} --reload
+	source $(PROJECT_DIR)/.env && $(PY_VENV)/bin/uvicorn main:app --host 0.0.0.0 --port ${PORT} --reload
