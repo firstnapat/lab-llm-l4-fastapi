@@ -19,7 +19,7 @@ async def process_grammar_task(request: GrammarTaskRequest) -> GrammarTaskRespon
     response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        # TODO-8: write code to augment style prompts into system prompts
+
         {
             "role": "system",
             "content": f"You will be provided with statements, and your task is to convert them to standard English. {style_prompts[style]}"
